@@ -80,7 +80,7 @@ const PageLinks = () => (
       href="https://www.twitter.com/persiansean/"
       icon={IoLogoTwitter}
     >
-      LinkedIn
+      Twitter
     </SideNavLink>
     <br /> <br /> <br />
   </Stack>
