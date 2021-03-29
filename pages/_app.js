@@ -15,6 +15,7 @@ import seo from '../seo.config';
 import theme from '../theme';
 import '../styles/globals.css';
 import { prismLightTheme, prismDarkTheme } from '../styles/prism';
+import mytheme from '../styles/mytheme';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -48,29 +49,46 @@ const GlobalStyle = ({ children }) => {
     </>
   );
 };
-function MyApp({ Component, pageProps }) {
-  return (
-    <ChakraProvider resetCSS theme={customTheme}>
-      <ColorModeProvider
-        options={{
-          initialColorMode: 'light',
-          useSystemColorMode: true,
-        }}
-      >
-        <Global
-          styles={css`
-            #__next {
-              height: 100%;
-            }
-          `}
-        />
-        <GlobalStyle>
-          <Component {...pageProps} />
-        </GlobalStyle>
-      </ColorModeProvider>
-      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
-    </ChakraProvider>
-  );
-}
+// function MyApp({ Component, pageProps }) {
+//   return (
+//     <ChakraProvider resetCSS theme={customTheme}>
+//       <ColorModeProvider
+//         options={{
+//           initialColorMode: 'light',
+//           useSystemColorMode: true,
+//         }}
+//       >
+//         <Global
+//           styles={css`
+//             #__next {
+//               height: 100%;
+//             }
+//           `}
+//         />
+//         <GlobalStyle>
+//           <Component {...pageProps} />
+//         </GlobalStyle>
+//       </ColorModeProvider>
+//       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+//     </ChakraProvider>
+//   );
+// }
 
-export default MyApp;
+// export default MyApp;
+
+const Portfolio = ({ Component, pageProps }) => (
+  <ChakraProvider resetCSS theme={mytheme}>
+    <Global
+      styles={css`
+        #__next {
+          height: 100%;
+        }
+      `}
+    />
+    {/* <DefaultSeo {...seo} /> */}
+    <Component {...pageProps} />
+    <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+  </ChakraProvider>
+);
+
+export default Portfolio;
