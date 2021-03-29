@@ -28,15 +28,14 @@ import {
   MdCode as Code,
   MdLaptopMac as Mac,
 } from 'react-icons/md';
+import Link from 'next/link';
 import { ComponentLink } from './NavLink';
 
-const SideNavLink = ({ href, children, icon }) => (
-  <ComponentLink href={href}>
-    <Flex align="center" padding={1}>
-      <Box as={icon} mr={3} w="24px" />
-      <Text fontWeight="bold">{children}</Text>
-    </Flex>
-  </ComponentLink>
+const MyLink = ({ children, icon }) => (
+  <Flex align="center" padding={1}>
+    <Box as={icon} mr={3} w="24px" />
+    <Text fontWeight="bold">{children}</Text>
+  </Flex>
 );
 
 const PageLinks = () => (
@@ -58,30 +57,27 @@ const PageLinks = () => (
     <br />
     <Divider />
     <br />
-    <SideNavLink href="/" icon={Home}>
-      Home
-    </SideNavLink>
-    <SideNavLink href="/about" icon={Person}>
-      About
-    </SideNavLink>
-    <SideNavLink href="/contact" icon={Contact}>
-      Contact
-    </SideNavLink>
+    <MyLink icon={Home}>
+      <Link href="/">Home</Link>
+    </MyLink>
+    <MyLink icon={Person}>
+      <Link href="/myIndex">About</Link>
+    </MyLink>
+    <MyLink icon={Contact}>
+      <Link href="/upload">Contact</Link>
+    </MyLink>
     <br />
     <Divider />
     <br />
     <Heading size="sm" mb={5}>
       Other Links
     </Heading>
-    <SideNavLink href="https://github.com/seanmodd" icon={GitHub}>
-      GitHub
-    </SideNavLink>
-    <SideNavLink
-      href="https://www.twitter.com/persiansean/"
-      icon={IoLogoTwitter}
-    >
-      Twitter
-    </SideNavLink>
+    <MyLink icon={GitHub}>
+      <Link href="https://github.com/seanmodd">Home</Link>
+    </MyLink>
+    <MyLink icon={IoLogoTwitter}>
+      <Link href="https://twitter.com/persiansean">Twitter</Link>
+    </MyLink>
     <br /> <br /> <br />
   </Stack>
 );

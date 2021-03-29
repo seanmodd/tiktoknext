@@ -1,3 +1,4 @@
+/* <eslint-disable>
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import styles from './app.module.css';
@@ -9,8 +10,8 @@ const Card = ({ user, toggleFollow }) => (
   <div className={styles.card}>
     <div className={styles.break} />
     <div className={styles.section}>
-      <div className={styles.user - info}>
-        <img className={styles.user - profile} src={user.avatar} width="100%" />
+      <div className={styles.userinfo}>
+        <img className={styles.userprofile} src={user.avatar} width="100%" />
         <div>
           <div className={styles.section}>
             <h3 className={styles.bold}>{user.username}</h3>
@@ -35,12 +36,13 @@ const Card = ({ user, toggleFollow }) => (
       <source src={user.video} type="video/mp4" />
     </video>
     <div className={(styles.section, styles.socials)}>
-      <i className={(styles.far, styles.fa - heart)} />
-      <div className={styles.social - tag}>{user.likes}</div>
-      <i className={(styles.far, styles.fa - comment - dots)} />
-      <div className={styles.social - tag}>{user.comments}</div>
-      <i className={(styles.far, styles.fa - share - square)} />
+      <i className={(styles.far, fa-heart)} />
+      <div className={styles.socialtag}>{user.likes}</div>
+      <i className={(styles.far, fa-comment-dots)} />
+      <div className={styles.socialtag}>{user.comments}</div>
+      <i className={(styles.far, fa-share-square)} />
     </div>
   </div>
 );
 export default Card;
+

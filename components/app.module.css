@@ -97,7 +97,7 @@ hr {
   justify-content: space-between;
 }
 
-.suggested-box {
+.suggestedbox {
   min-width: 320px;
   height: 600px;
   padding: 10px;
@@ -112,18 +112,18 @@ hr {
 }
 
 /* Styling for Upload Page */
-.upload-page {
+.uploadpage {
   margin-left: 30px;
 }
 
-.image-upload {
+.imageupload {
   width: 400px;
   height: 230px;
   background-color: rgb(22, 24, 35, 0.03);
   border-radius: 10px;
 }
 
-.input-section {
+.inputsection {
   margin: 10px;
   width: 700px;
   display: flex;
@@ -131,7 +131,7 @@ hr {
   justify-content: space-between;
 }
 
-.form-section {
+.formsection {
   margin-left: 20px;
   margin-top: 60px;
 }
@@ -170,7 +170,7 @@ button {
   margin: 10px 0 0 0;
 }
 
-.user-profile {
+.userprofile {
   width: 50px;
   height: 50px;
   background-color: red;
@@ -178,7 +178,7 @@ button {
   margin-right: 15px;
 }
 
-.social-tag {
+.socialtag {
   margin: 0 20px 0 5px;
 }
 
@@ -188,7 +188,7 @@ button {
   margin-left: 70px;
 }
 
-.user-info {
+.userinfo {
   display: flex;
   flex-direction: row;
   width: 412px;
@@ -203,7 +203,7 @@ button {
   margin-left: 70px;
 }
 
-.follow-button {
+.followbutton {
   border: 1px solid #fe2c55;
   border-radius: 3px;
   width: 88px;
@@ -215,7 +215,7 @@ button {
   font-size: 14px;
 }
 
-.followed-button {
+.followedbutton {
   border: 1px solid rgb(227, 227, 228);
   border-radius: 3px;
   width: 88px;
@@ -227,13 +227,13 @@ button {
 }
 
 /* Styling for FollowersColumn Component */
-.followers-column {
+.followerscolumn {
   min-width: 230px;
   height: 600px;
   padding: 10px;
 }
 
-.followers-section {
+.followerssection {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px 0;

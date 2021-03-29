@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import faker from "faker"
+import faker from 'faker';
+import styles from '../components/app.module.css';
 
 const Upload = () => {
   const username = 'aniak100';
@@ -11,8 +12,7 @@ const Upload = () => {
   const today = new Date();
   const timestamp = today.toISOString();
 
-  // let id = faker.random.uuid()
-  const id = '12345';
+  const id = faker.random.uuid();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,28 +42,28 @@ const Upload = () => {
   };
 
   return (
-    <div className="upload-page">
+    <div className={styles.uploadpage}>
       <br />
       <h1>Upload video</h1>
       <p>This video will be published to @{username}</p>
-      <div className="container">
+      <div className={styles.container}>
         <form onSubmit={handleSubmit}>
-          <div className="section">
-            <div className="image-upload" />
-            <div className="form-section">
-              <div className="section input-section">
-                <label className="bold">Caption</label>
+          <div className={styles.section}>
+            <div className={styles.imageupload} />
+            <div className={styles.formsection}>
+              <div className={(styles.section, styles.inputsection)}>
+                <label className={styles.bold}>Caption</label>
                 <input
-                  className="input"
+                  className={styles.input}
                   name="caption"
                   onChange={(e) => setCaption(e.target.value)}
                 />
               </div>
-              <div className="break" />
-              <div className="section input-section">
-                <label className="bold">Video Url</label>
+              <div className={styles.break} />
+              <div className={(styles.section, styles.inputsection)}>
+                <label className={styles.bold}>Video Url</label>
                 <input
-                  className="input"
+                  className={styles.input}
                   name="video"
                   onChange={(e) => setVideo(e.target.value)}
                 />
