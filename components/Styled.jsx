@@ -40,7 +40,7 @@ const MyButton = () => (
   </div>
 );
 
-const SeanFlex = styled(Flex)`
+const SeanFlex = styled(VStack)`
   align: 'center';
   justify-content: 'center';
   border-radius: 10px;

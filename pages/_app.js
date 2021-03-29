@@ -104,7 +104,7 @@ const Portfolio = ({ Component, pageProps }) => (
         }
       `}
     />
-    {/* <DefaultSeo {...seo} /> */}
+    <DefaultSeo {...seo} />
     {/* <SeanFlex /> */}
     <Component {...pageProps} />
 
