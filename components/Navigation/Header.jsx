@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 // Components
-import { Box, Flex, IconButton, useColorMode, Text } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import MobileNav from "./MobileNav";
+import { Box, Flex, IconButton, useColorMode, Text } from '@chakra-ui/react';
+import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
+import MobileNav from './MobileNav';
 
 // Utilities
-import Link from "next/link";
 
 const Header = (props) => {
   const { hideSearch, ...rest } = props;
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = { light: "white", dark: "gray.800" };
+  const bg = { light: 'white', dark: 'gray.800' };
 
   return (
     <Box
@@ -39,7 +39,7 @@ const Header = (props) => {
           <Link href="/" passHref>
             <Box as="a" d="block" aria-label="Back to homepage">
               <Text fontSize="xl" fontWeight="bold">
-                RYAN S. LE
+                SEAN S. M. MODD
               </Text>
             </Box>
           </Link>
@@ -47,14 +47,14 @@ const Header = (props) => {
           <Flex align="center" color="gray.500">
             <IconButton
               aria-label={`Switch to ${
-                colorMode === "light" ? "dark" : "light"
+                colorMode === 'light' ? 'dark' : 'light'
               } mode`}
               variant="ghost"
               color="current"
               ml="2"
               fontSize="20px"
               onClick={toggleColorMode}
-              icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             />
 
             {!hideSearch && <MobileNav />}

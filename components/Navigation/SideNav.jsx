@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Components
 import {
@@ -12,8 +12,7 @@ import {
   Center,
   Image,
   Heading,
-} from "@chakra-ui/react";
-import { ComponentLink } from "./NavLink";
+} from '@chakra-ui/react';
 
 // Icons
 import {
@@ -21,14 +20,15 @@ import {
   AiFillGithub as GitHub,
   AiFillLinkedin as LinkedIn,
   AiOutlinePaperClip as Resume,
-} from "react-icons/ai";
-import { IoPerson as Person } from "react-icons/io5";
-import { AtSignIcon as Contact, EditIcon as Credits } from "@chakra-ui/icons";
+} from 'react-icons/ai';
+import { IoLogoTwitter, IoPerson as Person } from 'react-icons/io5';
+import { AtSignIcon as Contact, EditIcon as Credits } from '@chakra-ui/icons';
 import {
   MdWork as Work,
   MdCode as Code,
   MdLaptopMac as Mac,
-} from "react-icons/md";
+} from 'react-icons/md';
+import { ComponentLink } from './NavLink';
 
 const SideNavLink = ({ href, children, icon }) => (
   <ComponentLink href={href}>
@@ -51,54 +51,38 @@ const PageLinks = () => (
           alt="Ryan Le"
           mb="5px"
         />
-        <Heading size="sm">Ryan Le</Heading>
-        <Text size="sm">Software Engineer Intern @ Nelnet</Text>
+        <Heading size="sm">Sean Modd</Heading>
+        <Text size="sm">@persiansean</Text>
       </VStack>
     </Center>
-
     <br />
     <Divider />
     <br />
-
     <SideNavLink href="/" icon={Home}>
       Home
     </SideNavLink>
     <SideNavLink href="/about" icon={Person}>
       About
     </SideNavLink>
-    <SideNavLink href="/experience" icon={Work}>
-      Experience
-    </SideNavLink>
-    <SideNavLink href="/skills" icon={Code}>
-      Skills
-    </SideNavLink>
-    <SideNavLink href="/projects" icon={Mac}>
-      Projects
-    </SideNavLink>
     <SideNavLink href="/contact" icon={Contact}>
       Contact
     </SideNavLink>
-
     <br />
     <Divider />
     <br />
-
     <Heading size="sm" mb={5}>
       Other Links
     </Heading>
-    <SideNavLink href="https://github.com/ryansle" icon={GitHub}>
+    <SideNavLink href="https://github.com/seanmodd" icon={GitHub}>
       GitHub
     </SideNavLink>
-    <SideNavLink href="https://www.linkedin.com/in/ryansle/" icon={LinkedIn}>
+    <SideNavLink
+      href="https://www.twitter.com/persiansean/"
+      icon={IoLogoTwitter}
+    >
       LinkedIn
     </SideNavLink>
-    <SideNavLink href="/resume" icon={Resume}>
-      Resume
-    </SideNavLink>
-    <SideNavLink href="/credits" icon={Credits}>
-      Credits
-    </SideNavLink>
-  <br /> <br /> <br />
+    <br /> <br /> <br />
   </Stack>
 );
 
@@ -107,7 +91,7 @@ const SideNav = (props) => {
 
   return (
     <Box
-      backgroundColor={colorMode === "light" ? "white" : "gray.800"}
+      backgroundColor={colorMode === 'light' ? 'white' : 'gray.800'}
       position="fixed"
       left="0"
       width="100%"
