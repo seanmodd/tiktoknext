@@ -14,12 +14,20 @@
     "@emotion/styled": "^11.1.5",
     "emailjs-com": "^2.6.4",
     "framer-motion": "^3.3.0",
-    "next": "10.0.5",
+    "next": "^10.0.5",
+    "next-google-fonts": "^2.1.0",
     "next-seo": "^4.19.0",
+    "prismjs": "^1.23.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0",
+    "styled-components": "^5.2.1",
+    "styled-jss": "^2.2.3",
+    "styled-jsx": "^3.3.2",
     "uuid": "^8.3.2"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

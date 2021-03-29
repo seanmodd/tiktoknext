@@ -48,7 +48,7 @@ const PageLinks = () => (
           boxSize="200px"
           boxShadow="md"
           src="/headshot.png"
-          alt="Ryan Le"
+          alt="Sean Modd"
           mb="5px"
         />
         <Heading size="sm">Sean Modd</Heading>
