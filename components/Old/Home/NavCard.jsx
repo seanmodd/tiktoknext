@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Components
 import {
@@ -10,15 +10,15 @@ import {
   Image,
   Icon,
   useColorMode,
-} from "@chakra-ui/react";
-import { AiOutlinePaperClip as Resume } from "react-icons/ai";
-import { IoPerson as Person } from "react-icons/io5";
-import { AtSignIcon as Contact } from "@chakra-ui/icons";
+} from '@chakra-ui/react';
+import { AiOutlinePaperClip as Resume } from 'react-icons/ai';
+import { IoPerson as Person } from 'react-icons/io5';
+import { AtSignIcon as Contact } from '@chakra-ui/icons';
 import {
   MdWork as Work,
   MdCode as Code,
   MdLaptopMac as Mac,
-} from "react-icons/md";
+} from 'react-icons/md';
 
 const NavCard = ({ image, icon, title, description, link, linkText }) => {
   // Responsive hooks
@@ -26,20 +26,19 @@ const NavCard = ({ image, icon, title, description, link, linkText }) => {
 
   const renderIcon = (icon) => {
     switch (icon) {
-      case "about":
+      case 'about':
         return Person;
-      case "experience":
+      case 'experience':
         return Work;
-      case "skills":
+      case 'skills':
         return Code;
-      case "projects":
+      case 'projects':
         return Mac;
-      case "contact":
+      case 'contact':
         return Contact;
-      case "resume":
+      case 'resume':
         return Resume;
       default:
-        return;
     }
   };
 
@@ -49,8 +48,8 @@ const NavCard = ({ image, icon, title, description, link, linkText }) => {
       borderRadius="lg"
       mx={[0, null, 2]}
       mb={8}
-      backgroundColor={colorMode === "light" ? "white" : "gray.800"}
-      width={["100%", null, "47%", "30%"]}
+      backgroundColor={colorMode === 'light' ? 'white' : 'gray.800'}
+      width={['100%', null, '47%', '30%']}
     >
       <Image
         src={image}
@@ -67,7 +66,7 @@ const NavCard = ({ image, icon, title, description, link, linkText }) => {
           {description}
         </Text>
         <Link href={link}>
-          <Button width="full" colorScheme="teal">
+          <Button width="full" colorScheme="pink">
             {linkText}
           </Button>
         </Link>

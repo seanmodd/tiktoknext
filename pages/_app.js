@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Button,
   ChakraProvider,
   ColorModeProvider,
   Flex,
@@ -17,38 +18,56 @@ import '../styles/globals.css';
 import { prismLightTheme, prismDarkTheme } from '../styles/prism';
 import mytheme from '../styles/mytheme';
 
-const GlobalStyle = ({ children }) => {
-  const { colorMode } = useColorMode();
+// const SeanFlex = styled(Flex)`
+//   align: 'center';
+//   justify-content: 'center';
+//   border-radius: 10px;
+//   padding: 20px;
+//   font-family: Poppins;
+//   margin: 15px;
+//   transition-duration: 0.1s;
+//   box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, 0.2);
+//   :hover {
+//     box-shadow: 12px 12px 12px 1px rgba(223, 3, 172, 0.2);
+//     transition: all 0.2s ease-out;
+//     padding: 25px;
+//     margin: 15px;
+//   }
+// `;
 
-  return (
-    <>
-      <Global
-        styles={css`
-          ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
-          ::selection {
-            background-color: #90cdf4;
-            color: #fefefe;
-          }
-          ::-moz-selection {
-            background: #ffb7b7;
-            color: #fefefe;
-          }
-          html {
-            min-width: 356px;
-            scroll-behavior: smooth;
-          }
-          #__next {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: ${colorMode === 'light' ? 'white' : '#171717'};
-          }
-        `}
-      />
-      {children}
-    </>
-  );
-};
+// const GlobalStyle = ({ children }) => {
+//   const { colorMode } = useColorMode();
+
+//   return (
+//     <>
+//       <Global
+//         styles={css`
+//           ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
+//           ::selection {
+//             background-color: #90cdf4;
+//             color: #fefefe;
+//           }
+//           ::-moz-selection {
+//             background: #ffb7b7;
+//             color: #fefefe;
+//           }
+//           html {
+//             min-width: 356px;
+//             scroll-behavior: smooth;
+//           }
+//           #__next {
+//             display: flex;
+//             flex-direction: column;
+//             min-height: 100vh;
+//             background: ${colorMode === 'light' ? 'white' : '#171717'};
+//           }
+//         `}
+//       />
+//       {children}
+//     </>
+//   );
+// };
+
 // function MyApp({ Component, pageProps }) {
 //   return (
 //     <ChakraProvider resetCSS theme={customTheme}>
@@ -86,7 +105,9 @@ const Portfolio = ({ Component, pageProps }) => (
       `}
     />
     {/* <DefaultSeo {...seo} /> */}
+    {/* <SeanFlex /> */}
     <Component {...pageProps} />
+
     <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
   </ChakraProvider>
 );

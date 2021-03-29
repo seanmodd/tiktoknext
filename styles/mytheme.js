@@ -1,4 +1,5 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, theme as chakraTheme, Flex } from '@chakra-ui/react';
+
 import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 const config = {
@@ -11,7 +12,11 @@ const breakpoints = createBreakpoints({
   md: '48em',
   lg: '87.5em', // tabletScreen
 });
-
-const mytheme = extendTheme({ config, breakpoints });
+const fonts = {
+  ...chakraTheme.fonts,
+  body: 'Poppins',
+  heading: 'Poppins',
+};
+const mytheme = extendTheme({ ...chakraTheme, config, fonts, breakpoints });
 
 export default mytheme;

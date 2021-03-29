@@ -26,19 +26,17 @@ const pressedStyle = {
   fontWeight: '400',
 };
 
-const FormButton = ({ toggleForm, showAdd, text }) => (
+const MyButton = () => (
   <div>
     <Button
       transition="0.1s"
       boxShadow="3px 3px 3px 3px rgba(0, 0, 255, 0.2)"
-      background={showAdd ? 'red' : 'blue'}
       color="white"
+      p="10px"
+      m="10px"
       _hover={hoverStyle}
       _active={pressedStyle}
-      onClick={toggleForm}
-    >
-      {showAdd ? 'Close' : 'Add'}?
-    </Button>
+    />
   </div>
 );
 
@@ -80,4 +78,4 @@ const NewStack = ({ children }) => (
   </>
 );
 
-export { SeanFlex, MyFlex, FormButton, NewFlex, NewStack };
+export { SeanFlex, MyFlex, MyButton, NewFlex, NewStack };

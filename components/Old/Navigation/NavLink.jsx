@@ -1,11 +1,11 @@
-import React, { cloneElement, forwardRef } from "react";
+import React, { cloneElement, forwardRef } from 'react';
 
 // Components
-import { Box, useColorMode } from "@chakra-ui/react";
+import { Box, useColorMode } from '@chakra-ui/react';
 
 // Utilities
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const NavLink = ({ children, ...props }) => {
   const router = useRouter();
@@ -15,24 +15,26 @@ const NavLink = ({ children, ...props }) => {
     isActive = true;
   }
 
-  if (router.pathname.startsWith("/projects") && props.href.startsWith("/projects")) {
+  if (
+    router.pathname.startsWith('/projects') &&
+    props.href.startsWith('/projects')
+  ) {
     isActive = true;
   }
 
   return (
     <Link passHref {...props}>
-      {typeof children === "function" ? children(isActive) : children}
+      {typeof children === 'function' ? children(isActive) : children}
     </Link>
   );
 };
 
-export const stringToUrl = (str, path = "/") => {
-  return `${path}${str.toLowerCase().split(" ").join("-")}`;
-};
+export const stringToUrl = (str, path = '/') =>
+  `${path}${str.toLowerCase().split(' ').join('-')}`;
 
 export const SideNavLink = forwardRef(({ children, icon, ...props }, ref) => {
   const { colorMode } = useColorMode();
-  const color = { light: "gray.700", dark: "whiteAlpha.700" };
+  const color = { light: 'gray.700', dark: 'whiteAlpha.700' };
   return (
     <Box
       ref={ref}
@@ -45,7 +47,7 @@ export const SideNavLink = forwardRef(({ children, icon, ...props }, ref) => {
       transition="all 0.2s"
       fontWeight="medium"
       outline="none"
-      _focus={{ shadow: "outline" }}
+      _focus={{ shadow: 'outline' }}
       color={color[colorMode]}
       _notFirst={{ mt: 1 }}
       {...props}
@@ -56,41 +58,39 @@ export const SideNavLink = forwardRef(({ children, icon, ...props }, ref) => {
   );
 });
 
-export const TopNavLink = forwardRef(({ href, ...props }, ref) => {
-  return (
-    <NavLink href={href}>
-      {(isActive) => (
-        <SideNavLink
-          ref={ref}
-          aria-current={isActive ? "page" : undefined}
-          _hover={{ color: !isActive ? "inherit" : null }}
-          {...(isActive && { color: "teal.500", fontWeight: "semibold" })}
-          {...props}
-        />
-      )}
-    </NavLink>
-  );
-});
+export const TopNavLink = forwardRef(({ href, ...props }, ref) => (
+  <NavLink href={href}>
+    {(isActive) => (
+      <SideNavLink
+        ref={ref}
+        aria-current={isActive ? 'page' : undefined}
+        _hover={{ color: !isActive ? 'inherit' : null }}
+        {...(isActive && { color: 'pink.500', fontWeight: 'semibold' })}
+        {...props}
+      />
+    )}
+  </NavLink>
+));
 
 export const ComponentLink = forwardRef(({ href, ...props }, ref) => {
   const { colorMode } = useColorMode();
-  const hoverColor = { light: "gray.900", dark: "whiteAlpha.900" };
-  const activeColor = { light: "teal.800", dark: "teal.200" };
-  const activeBg = { light: "gray.100", dark: "gray.700" };
+  const hoverColor = { light: 'gray.900', dark: 'whiteAlpha.900' };
+  const activeColor = { light: 'pink.800', dark: 'pink.200' };
+  const activeBg = { light: 'gray.100', dark: 'gray.700' };
 
   return (
     <NavLink href={href}>
       {(isActive) => (
         <SideNavLink
           ref={ref}
-          aria-current={isActive ? "page" : undefined}
+          aria-current={isActive ? 'page' : undefined}
           _hover={{
             color: hoverColor[colorMode],
-            transform: "translateX(2px)",
+            transform: 'translateX(2px)',
           }}
           {...(isActive && {
             bg: activeBg[colorMode],
-            rounded: "sm",
+            rounded: 'sm',
             borderRadius: 4,
             color: activeColor[colorMode],
             _hover: {},
