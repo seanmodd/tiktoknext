@@ -7,23 +7,10 @@ const Footer = () => {
   const [tabletScreen] = useMediaQuery('(max-width: 1400px)');
 
   return (
-    <Box>
-      <Flex justify="space-between" wrap="wrap">
-        <Text fontSize="md" mb={3}>
-          Copyright &copy; {new Date().getFullYear()} Ryan Le. All Rights
-          Reserved.
-        </Text>
-        {!tabletScreen && (
-          <Text fontSize="md" mb={3}>
-            Portfolio created with{' '}
-            <Link href="https://chakra-ui.com/" color="pink.500">
-              Chakra UI
-            </Link>{' '}
-            components.
-          </Text>
-        )}
-      </Flex>
-    </Box>
+    <Text w="100%" fontSize="sm" align="center" justify="center" mb={3}>
+      Copyright &copy; {new Date().getFullYear()} Sean Modd. All Rights
+      Reserved.
+    </Text>
   );
 };
 

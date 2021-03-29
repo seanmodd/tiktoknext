@@ -17,6 +17,29 @@ import AppNavigation from '../components/Old/Navigation/AppNavigation';
 import { NewFlex, SeanFlex } from '../components/Styled';
 import Card from '../components/Card';
 import Header from '../components/Header';
+import Footer from '../components/Old/Navigation/Footer';
+
+function Feature({ title, desc, ...rest }) {
+  return (
+    <>
+      <Box
+        p={5}
+        shadow="md"
+        borderWidth="1px"
+        flex="1"
+        borderRadius="md"
+        {...rest}
+      >
+        <Heading fontWeight="500" fontSize={['15px', '17px', '19px', '25px']}>
+          {title}
+        </Heading>
+        <Text fontSize={['10px', '15px', '15px', '20px']} mt={4}>
+          {desc}
+        </Text>
+      </Box>
+    </>
+  );
+}
 
 const hoverStyle = {
   boxShadow: '7px 7px 7px 7px  rgba(223, 3, 172, 0.2)',
@@ -60,7 +83,7 @@ const Home = () => (
   <AppNavigation width="full" maxWidth="1280px" mx="auto">
     <Image src="./banner.png" borderRadius={20} mb={10} boxShadow="lg" />
 
-    <VStack spacing="30px">
+    <VStack justify="space-between" spacing="30px">
       <Heading size="2xl">Sean Modd</Heading>
       <NewFlex>
         <Flex w="100%" justify="center">
@@ -70,15 +93,32 @@ const Home = () => (
       <MyButton>Let's go</MyButton>
     </VStack>
     <Header />
-    <HStack justify="space-evenly" bg="green.500">
-      <VStack bg="red.500">
-        <Heading>Followers</Heading>
+    <HStack
+      fontSize={['15px', '17px', '19px', '25px']}
+      justify="space-between"
+      bg="green.500"
+      p="5"
+    >
+      <VStack bg="yellow.500" pt="5" borderRadius="xl">
+        <Heading fontSize={['15px', '17px', '19px', '25px']}>Profile</Heading>
+        <Feature
+          title="Plan Money"
+          desc="The future can be even brighter but a goal without a plan is just a wish"
+        />
       </VStack>
-      <VStack bg="yellow.500">
-        <Heading>Profile</Heading>
+      <VStack bg="blue.500" pt="5" borderRadius="xl">
+        <Heading fontSize={['15px', '17px', '19px', '25px']}> Social</Heading>
+        <Feature
+          title="Plan Money"
+          desc="The future can be even brighter but a goal without a plan is just a wish"
+        />
       </VStack>
-      <VStack bg="blue.500">
-        <Heading>Social</Heading>
+      <VStack bg="red.500" pt="5" borderRadius="xl">
+        <Heading fontSize={['15px', '17px', '19px', '25px']}>Other</Heading>
+        <Feature
+          title="Plan Money"
+          desc="The future can be even brighter but a goal without a plan is just a wish"
+        />
       </VStack>
     </HStack>
   </AppNavigation>

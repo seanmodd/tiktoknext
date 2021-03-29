@@ -1,49 +1,42 @@
-import React from "react";
+import React from 'react';
 
 // Components
-import { Box, useColorMode, } from "@chakra-ui/react";
-import SideNav from "./SideNav";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Box, Text, useColorMode } from '@chakra-ui/react';
+import SideNav from './SideNav';
+import Header from './Header';
+import Footer from './Footer';
 
 const AppNavigation = ({ children, ...rest }) => {
   const { colorMode } = useColorMode();
- 
+
   return (
     <Box>
       <Header />
-      <Box px={[4, null, 8]} backgroundColor={colorMode === "light" ? "gray.100" : "gray.900"}>
+
+      <Box>
         <SideNav
-          display={["none", null, "block"]}
+          // display={['none', null, 'block']}
+          display={['none', 'none', 'none', 'block']}
           maxWidth="18rem"
           width="full"
         />
-        <Box pl={[0, null, "18rem"]} marginTop="4rem">
-          <Box
-            as="section"
-            minHeight="calc(100vh - 4rem)"
-          >
+        <Box
+          // pl={[0, null, '18rem']}
+          // pl={['none', 'none', '8rem', '10rem']}
+          pr={['1em', '1em', '5em', '10em']}
+          pl={['1em', '1em', '7em', '15em']}
+          marginTop="4rem"
+        >
+          <Box as="section" minHeight="calc(90vh - 6rem)" maxHeight="100vh">
             <Box py="2em" {...rest}>
               {children}
             </Box>
-            {/* <Box 
-              // px={phoneScreen ? "10%" : "2%"} 
-              px={["10%", null, "2%"]}
-              borderTop="1px"
-              borderColor="gray.600" 
-              py={5}
-              backgroundColor={colorMode === "light" ? "white" : "gray.800"}
-              pos="absolute"
-              // maxWidth={phoneScreen ? "100%" : "calc(100vw - 18rem)"}
-              maxWidth={["100%", null, "calc(100vw - 18rem)"]}
-              as="footer"
-              bottom="0"
-              mt={10}
-            >
-              <Footer />
-            </Box> */}
           </Box>
         </Box>
+        <Text position="absolute" bottom="-100" width="100%" align="center">
+          Copyright &copy; {new Date().getFullYear()} Sean Modd. All Rights
+          Reserved.
+        </Text>
       </Box>
     </Box>
   );

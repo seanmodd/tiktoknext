@@ -19,11 +19,17 @@ const fonts = {
   heading: 'Poppins',
 };
 
+// const breakpoints = createBreakpoints({
+// sm: '40em',
+// md: '52em',
+// lg: '64em',
+// xl: '76em',
+// });
 const breakpoints = createBreakpoints({
-  sm: '40em',
-  md: '52em',
-  lg: '64em',
-  lg: '62em',
+  sm: '10em',
+  md: '20em',
+  lg: '30em',
+  xl: '40em',
 });
 
 const overrides = {

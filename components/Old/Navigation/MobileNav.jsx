@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 // Components
 import {
@@ -8,12 +8,12 @@ import {
   useDisclosure,
   DrawerOverlay,
   DrawerContent,
-} from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
-import SideNav from "./SideNav";
+} from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { useRouter } from 'next/router';
+import SideNav from './SideNav';
 
 // Utilities
-import { useRouter } from "next/router";
 
 const useRouteChanged = (callback) => {
   const router = useRouter();
@@ -21,13 +21,13 @@ const useRouteChanged = (callback) => {
   useEffect(() => {
     const handleRouteChange = (url) => {
       callback();
-      console.log("App is changing to: ", url);
+      console.log('App is changing to: ', url);
     };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange);
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events, callback]);
 };
@@ -43,7 +43,8 @@ const MobileNav = () => {
         aria-label="Navigation Menu"
         fontSize="20px"
         variant="ghost"
-        display={{ sm: "inline-flex", md: "none" }}
+        // display={{ sm: "inline-flex", md: "none" }}
+        display={['block', 'block', 'block', 'none']}
         color="gray.500"
         icon={<HamburgerIcon />}
         onClick={onToggle}
