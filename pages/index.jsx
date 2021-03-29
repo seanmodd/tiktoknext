@@ -8,12 +8,15 @@ import {
   Button,
   Flex,
   VStack,
+  HStack,
 } from '@chakra-ui/react';
 import { v4 as uuid } from 'uuid';
 import styled from 'styled-components';
 import { useColorModeValue as mode } from '@chakra-ui/color-mode';
 import AppNavigation from '../components/Old/Navigation/AppNavigation';
 import { NewFlex, SeanFlex } from '../components/Styled';
+import Card from '../components/Card';
+import Header from '../components/Header';
 
 const hoverStyle = {
   boxShadow: '7px 7px 7px 7px  rgba(223, 3, 172, 0.2)',
@@ -64,9 +67,20 @@ const Home = () => (
           <Text fontSize="xl"> Follow me @persiansean</Text>
         </Flex>
       </NewFlex>
-
       <MyButton>Let's go</MyButton>
     </VStack>
+    <Header />
+    <HStack justify="space-evenly" bg="green.500">
+      <VStack bg="red.500">
+        <Heading>Followers</Heading>
+      </VStack>
+      <VStack bg="yellow.500">
+        <Heading>Profile</Heading>
+      </VStack>
+      <VStack bg="blue.500">
+        <Heading>Social</Heading>
+      </VStack>
+    </HStack>
   </AppNavigation>
 );
 
