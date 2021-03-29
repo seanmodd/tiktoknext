@@ -45,6 +45,7 @@ const Home = () => (
       <MyButton>
         <Link href="/#">Let's go home</Link>
       </MyButton>
+      <Button colorScheme="whatsapp">Click here</Button>
     </VStack>
   </>
 );
